@@ -14,8 +14,6 @@ document.open();
 //ループの中で毎回if文使うのはナンセンスな気がするので、月初めに確実に行う処理はループの外で記述
 
 today.setDate(1);
-if (dayTable[today.getDay()] == "月") {
-    weekNum += 1;}
 document.write(
 "|                                "
 +"[/ "+today.getFullYear()+"/"+today.getMonth()+"]"
