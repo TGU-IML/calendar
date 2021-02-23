@@ -23,14 +23,8 @@ document.write(
 +"| [[Mon]] |  [[Tue]] | [[Wed]] |  [[Thu]] |   [[Fri]]  |  [[Sat]]  |  [[Sun]] |" + "<br>");
 
 document.write(
-    "[[" +
-    (today.getMonth() + 1) +
-    "/" +
-    today.getDate() +
-    "(" +
-    dayTable[today.getDay()] +
-    ")]]" +
-    "<br>"
+    "
+|   [" + 01 https://scrapbox.io/IML/2021/2/23]  |   [[[02 https://scrapbox.io/IML/2021/2/23]]]   |   [[[03 https://scrapbox.io/IML/2021/2/23]]]  |   [[[04 https://scrapbox.io/IML/2021/2/24]]]  |   [[[05 https://scrapbox.io/IML/2021/2/24]]]  |   [[[06 https://scrapbox.io/IML/2021/2/24]]]   |   [[[07 https://scrapbox.io/IML/2021/2/24]]]  |
 );
 
 for (var i = 2; i <= endOfMonthDate; i++) {
