@@ -20,7 +20,7 @@ document.open();
 
 today.setDate(1);
 document.write(
-'[/ 　　　　　　　　'+today.getFullYear()+'/' + (today.getMonth() + 1)+'<br>'
+'[/ 　　　　　　　'+today.getFullYear()+'/' + (today.getMonth() + 1)+']<br>'
 +'|&nbsp;[[Mon]]&nbsp;|&nbsp;&nbsp;[[Tue]]&nbsp;|&nbsp;[[Wed]]&nbsp;|&nbsp;&nbsp;[[Thu]]&nbsp;|&nbsp;&nbsp;&nbsp;[[Fri]]&nbsp;&nbsp;|&nbsp;&nbsp;[[Sat]]&nbsp;&nbsp;|&nbsp;&nbsp;[[Sun]]&nbsp;|<br>');
 
 if(dayTable[today.getDay()] != '月'){
