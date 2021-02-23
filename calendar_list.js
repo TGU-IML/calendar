@@ -1,7 +1,8 @@
 //今日の日付
 var today = new Date();
+var lastMonday = new Date(date.getFullYear(), date.getMonth()-1, ;
 //今月の月末日を今日の日付から計算．
-var endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+var endOfMonth = new Date(today.getFullYear(), today.getMonth()+1, 0);
 var endOfMonthDate = endOfMonth.getDate();
 //曜日変換用配列
 dayTable = ["月", "火", "水", "木", "金", "土", "日"];
@@ -25,24 +26,4 @@ document.write(
 |   [" + 01 https://scrapbox.io/IML/2021/2/23]  |   [[[02 https://scrapbox.io/IML/2021/2/23]]]   |   [[[03 https://scrapbox.io/IML/2021/2/23]]]  |   [[[04 https://scrapbox.io/IML/2021/2/24]]]  |   [[[05 https://scrapbox.io/IML/2021/2/24]]]  |   [[[06 https://scrapbox.io/IML/2021/2/24]]]   |   [[[07 https://scrapbox.io/IML/2021/2/24]]]  |
 );
 
-for (var i = 2; i <= endOfMonthDate; i++) {
-    today.setDate(i);
-    if (dayTable[today.getDay()] == "月") {
-        weekNum += 1;
-        document.write(
-            "#" + (today.getMonth() + 1) + "月" + weekNum + "W" + "<br>"
-        );
-    }
-
-    document.write(
-        "[[" +
-        (today.getMonth() + 1) +
-        "/" +
-        today.getDate() +
-        "(" +
-        dayTable[today.getDay()] +
-        ")]]" +
-        "<br>"
-    );
-}
 document.close();
