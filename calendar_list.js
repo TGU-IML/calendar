@@ -40,7 +40,7 @@ for(i=1; i<=endOfMonthDate;i++){
         document.write('|&nbsp;&nbsp;&nbsp;');
     }
     document.write(
-        "["+("0" + i).slice(-2) + link_head + today.getFullYear() + '/' + (today.getMonth() + 1) + '/'  + today.getDate() + spaceTable[today.getDay()]
+        "[[["+("0" + i).slice(-2) + link_head + today.getFullYear() + '/' + (today.getMonth() + 1) + '/'  + today.getDate()+"]]" + spaceTable[today.getDay()]
         );
 }
 document.close();
