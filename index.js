@@ -38,7 +38,7 @@ for (var i = 2; i <= endOfMonthDate; i++) {
     }
 
     document.write(
-        "[[#" +
+        "[[" +
         today.getFullYear()+
         "/"+
         (today.getMonth() + 1) +
