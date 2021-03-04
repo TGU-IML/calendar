@@ -13,6 +13,8 @@ document.open();
 //ループの中で毎回if文使うのはナンセンスな気がするので、月初めに確実に行う処理はループの外で記述
 
 today.setDate(1);
+var dayCount = 7 - today.getDay();
+
 if (dayTable[today.getDay()] == "月") {
     weekNum += 1;}
 document.write("[!* " +today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]" + "<br>");
@@ -29,7 +31,11 @@ document.write(
     ")]]" +
     "<br>"
 );
-
+if (dayTable[today.getDay()] == "月") {
+    document.write(
+        "[[先週の反省]]<br>[[今週の課題]]<br>"
+    );
+}
 for (var i = 2; i <= endOfMonthDate; i++) {
     today.setDate(i);
     if (dayTable[today.getDay()] == "月") {
@@ -50,5 +56,10 @@ for (var i = 2; i <= endOfMonthDate; i++) {
         ")]]" +
         "<br>"
     );
+    if (dayTable[today.getDay()] == "月") {
+        document.write(
+            "[[先週の反省]]<br>[[今週の課題]]<br>"
+        );
+    }
 }
 document.close(); 
