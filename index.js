@@ -17,13 +17,16 @@ if (dayTable[today.getDay()] == "月") {
     weekNum += 1;}
 document.write("[!* " +today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]" + "<br>");
 document.write(
-    "[[ " +
+    "[[" +
     today.getFullYear()+
     "/"+
     (today.getMonth() + 1) +
     "/" +
     today.getDate() +
     "]]" +
+    "[[(" +
+    dayTable[today.getDay()] +
+    ")]]" +
     "<br>"
 );
 
