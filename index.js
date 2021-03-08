@@ -16,8 +16,16 @@ today.setDate(1);
 var dayCount = (6+today.getDay())%7;
 
 if (dayTable[today.getDay()] == "月") {
-    weekNum += 1;}
+    weekNum += 1;
 document.write("[!* &nbsp;" + today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]" + "<br>");
+document.write(
+    "[*= 先週の反省]<br>[*= 今週の課題]<br>"
+);
+}
+else{
+    document.write("[!* &nbsp;" + today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]" + "<br>");
+}
+
 document.write(
     "[[" +
     today.getFullYear()+
@@ -31,16 +39,14 @@ document.write(
     ")]]" +
     "<br>"
 );
-if (dayTable[today.getDay()] == "月") {
-    document.write(
-        "[*= 先週の反省]<br>[*= 今週の課題]<br>"
-    );
-}
 for (var i = 2; i <= endOfMonthDate; i++) {
     today.setDate(i);
-    if (dayTable[today.getDay()] == "月") {
+    if (dayTable[(dayCount+i) % 7] == "月") {
         weekNum += 1;
         document.write("[!*  &nbsp;" +today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]" + "<br>");
+        document.write(
+            "[[先週の反省]]<br>[[今週の課題]]<br>"
+        );
     }
 
     document.write(
@@ -56,10 +62,5 @@ for (var i = 2; i <= endOfMonthDate; i++) {
         ")]]" +
         "<br>"
     );
-    if (dayTable[(dayCount+i) % 7] == "月") {
-        document.write(
-            "[[先週の反省]]<br>[[今週の課題]]<br>"
-        );
-    }
 }
 document.close(); 
