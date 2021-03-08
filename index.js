@@ -31,7 +31,7 @@ document.write(
     ")]]" +
     "<br>"
 );
-if ((dayCount+i) % 7 == 1) {
+if (dayTable[today.getDay()] == "月") {
     document.write(
         "[*= 先週の反省]<br>[*= 今週の課題]<br>"
     );
@@ -56,7 +56,7 @@ for (var i = 2; i <= endOfMonthDate; i++) {
         ")]]" +
         "<br>"
     );
-    if ((dayCount+i) % 7 == 1) {
+    if (dayTable[(dayCount+i) % 7] == "月") {
         document.write(
             "[[先週の反省]]<br>[[今週の課題]]<br>"
         );
