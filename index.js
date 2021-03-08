@@ -33,7 +33,7 @@ document.write(
 );
 if ((dayCount+i) % 7 == 1) {
     document.write(
-        "[[先週の反省]]<br>[[今週の課題]]<br>"
+        "[*= 先週の反省]<br>[*= 今週の課題]<br>"
     );
 }
 for (var i = 2; i <= endOfMonthDate; i++) {
