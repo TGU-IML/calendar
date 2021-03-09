@@ -13,7 +13,7 @@ document.open();
 //ループの中で毎回if文使うのはナンセンスな気がするので、月初めに確実に行う処理はループの外で記述
 
 today.setDate(1);
-var dayCount = (6+today.getDay())%7;
+const dayCount = (6+today.getDay())%7;
 
 if (dayTable[today.getDay()] == "月") {
     weekNum += 1;
