@@ -4,7 +4,7 @@ var today = new Date();
 var endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 var endOfMonthDate = endOfMonth.getDate();
 //曜日変換用配列
-dayTable = ["月", "火", "水", "木", "金", "土", "日"];
+dayTable = [ "日", "月", "火", "水", "木", "金", "土"];
 //何周目かの初期値を入れるため，月初に設定
 var weekNum = 0;
 //書き込むドキュメントを開く
@@ -13,11 +13,19 @@ document.open();
 //ループの中で毎回if文使うのはナンセンスな気がするので、月初めに確実に行う処理はループの外で記述
 
 today.setDate(1);
+var dayCount = (6+today.getDay())%7;
+
 if (dayTable[today.getDay()] == "月") {
-    weekNum += 1;}
-document.write("[!* [ " +today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]]" + "<br>");
+    weekNum += 1;
+}
+document.write("[!* &nbsp;" + today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]" + "<br>");
 document.write(
-    "[[#" +
+    "[*= 先週の反省]<br>[*= 今週の課題]<br>"
+);
+
+
+document.write(
+    "[[" +
     today.getFullYear()+
     "/"+
     (today.getMonth() + 1) +
@@ -29,16 +37,18 @@ document.write(
     ")]]" +
     "<br>"
 );
-
 for (var i = 2; i <= endOfMonthDate; i++) {
     today.setDate(i);
-    if (dayTable[today.getDay()] == "月") {
+    if (dayTable[(dayCount+i) % 7] == "月") {
         weekNum += 1;
-        document.write("[!* "+today.getFullYear() +"/" + (today.getMonth() + 1) + "月" + weekNum + "W]" + "<br>");
+        document.write("[!*  &nbsp;" +today.getFullYear() +"/"+ (today.getMonth() + 1) + "月" + weekNum + "W ]" + "<br>");
+        document.write(
+            "[*= 先週の反省]<br>[*= 今週の課題]<br>"
+        );
     }
 
     document.write(
-        "[[#" +
+        "[[" +
         today.getFullYear()+
         "/"+
         (today.getMonth() + 1) +
